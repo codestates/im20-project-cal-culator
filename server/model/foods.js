@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     "Foods",
     {
       food_name: DataTypes.STRING,
+      image: DataTypes.STRING,
       calories: DataTypes.FLOAT,
       fat: DataTypes.FLOAT,
       carbohydrates: DataTypes.FLOAT,

@@ -32,18 +32,18 @@ module.exports = {
         )
         .then((response) => {
           let nutritionInfo = response.data.results[0].nutrition.nutrients;
-          // console.log("info : ", nutritionInfo);
+
+          // nutrition 객체에 food image와 nutrition 정보 넣어주기.
+          nutrition["image"] = response.data.results[0].image;
 
           for (let i of nutritionInfo) {
             nutrition[i.title] = i.amount;
           }
-          // console.log(nutrition);
-          // console.log(nutrition.Sugar);
-          // console.log(nutrition["Vitamin C"]);
 
-          // 2. create database
+          // 2. create
           Foods.create({
             food_name: food_name,
+            image: nutrition["image"],
             calories: nutrition["Calories"] || 0,
             fat: nutrition["Fat"] || 0,
             carbohydrates: nutrition["Carbohydrates"] || 0,
