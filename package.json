@@ -20,10 +20,6 @@
   "bugs": {
     "url": "https://github.com/codestates/im20-project-cal-culator/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/codestates/im20-project-cal-culator#readme"
-=======
   "homepage": "https://github.com/codestates/im20-project-cal-culator#readme",
   "dependencies": {}
->>>>>>> 9b78ed6bfdc4c7aa2de5f1c1cd20e2a0ea33f66f
 }
