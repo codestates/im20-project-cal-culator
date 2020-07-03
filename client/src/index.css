@@ -1,5 +1,5 @@
 .footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -8,6 +8,7 @@
   color: #27ac27;
 	background-color: rgb(235,245,232);
 }
+
 
 :root {
   --mdc-theme-primary: #27ac27;

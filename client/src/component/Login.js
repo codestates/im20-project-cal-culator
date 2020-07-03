@@ -1,7 +1,6 @@
-import React, { Component, useState, memo } from 'react';
-import { withRouter, Link, Redirect } from 'react-router-dom';
+import React, { memo } from 'react';
 import Modal from 'react-modal';
-const axios = require('axios');
+//const axios = require('axios');
 
 const customStyles = {
     content: {

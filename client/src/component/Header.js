@@ -1,22 +1,28 @@
 import React from 'react';
-import { Tab, TabBar} from '@rmwc/tabs'
+import { Switch, Route, Router, useHistory, withRouter } from 'react-router-dom';
+import { Tab, TabBar } from '@rmwc/tabs'
 import '@rmwc/tabs/styles';
 
 
 
 const Header = () => {
-    return(
+
+    const history = useHistory();
+
+    return (
         <div>
             <header>
                 <TabBar>
-                    <Tab>Home</Tab>
-                    <Tab>Summary</Tab>
-                    <Tab>Calculator</Tab>
-                    <Tab>Solution</Tab>
+                    <Tab onClick={() => history.push("/")}>Home</Tab>
+                    <Tab onClick={() => history.push("/about")}>About</Tab>
+                    <Tab onClick={() => history.push("/summary")}>Summary</Tab>
+                    <Tab onClick={() => history.push("/calculator")}>Calculator</Tab>
+                    <Tab onClick={() => history.push("/dodont")}>DO & DON`T</Tab>
+                    <Tab >LOGIN</Tab>
                 </TabBar>
             </header>
         </div>
     )
 }
 
-export default Header;
+export default withRouter(Header);

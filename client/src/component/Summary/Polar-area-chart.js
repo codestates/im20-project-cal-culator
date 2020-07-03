@@ -2,15 +2,26 @@ import React from 'react';
 import { Polar } from 'react-chartjs-2';
 
 const state = {
-    labels: ['Mon', 'Tue', 'Wed',
-             'Thu', 'Fri', 'Sat', "Sun"],
+    labels: ['calorie(%)', 'fat', 'carb', 'sugar', 'protein', 'sodium', 'cholesterol', 'iron', 'calcium', 'zinc', 'V_a', 'V_c'],
     datasets: [
       {
         label: 'Total Consumed Calorie',
-        backgroundColor: ['rgba(200,192,192,1)','rgba(50,23,23,12)'],
+        backgroundColor: ['rgba(232 , 55, 114, 0.5)',
+                          'rgba(82, 187, 172, 0.5)', 
+                          'rgba(150, 215, 247, 0.5)',
+                          'rgba(253, 237, 106, 0.5)',
+                          'rgba(154, 153, 201, 0.5)',
+                          'rgba(191, 147, 182, 0.5)',
+                          'rgba(246, 248, 255, 0.5)',
+                          'rgba(225, 106, 9, 0.5)',
+                          'rgba(198, 240, 141, 0.5)',
+                          'rgba(87, 74, 152, 0.5)',
+                          'rgba(50, 129, 247, 0.5)',
+                          'rgba(67, 17, 59, 0.5)',
+                        ],
         borderColor: 'rgba(0,0,1,1)',
         borderWidth: 0.5,
-        data: [100, 80, 36, 23, 43, 25, 36]
+        data: [100, 36.5, 23, 43, 25, 36, 43, 34, 52, 64, 24, 50]
       }
     ]
   }
@@ -21,13 +32,14 @@ const ChartPolar = () => {
         <div>
         <Polar
           data={state}
-          width={50}
-          height={200}
+          width={1}
+          height={500}
           options={{
             title:{
               display:true,
-              text:'Weekly Report',
-              fontSize:25
+              text:'Daily Nutrition Report',
+              fontSize:25,
+              fontColor: 'rgba(67, 17, 59, 1)'
             },
             legend:{
               display:true,
