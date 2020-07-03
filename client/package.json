@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material/textfield": "^7.0.0",
     "@rmwc/button": "^6.1.3",
     "@rmwc/data-table": "^6.1.3",
     "@rmwc/dialog": "^6.1.3",
     "@rmwc/grid": "^6.0.14",
+    "@rmwc/icon-button": "^6.1.3",
     "@rmwc/select": "^6.1.3",
     "@rmwc/tabs": "^6.1.3",
     "@rmwc/textfield": "^6.1.3",
