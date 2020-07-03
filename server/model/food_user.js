@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  var Food_user = sequelize.define(
-    "Food_user",
+  var Food_users = sequelize.define(
+    "Food_users",
     {
       amount: DataTypes.INTEGER,
       time: DataTypes.DATE,
@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  Food_user.associate = function (models) {
-    models.Food_user.belongsTo(models.Users, {
+  Food_users.associate = function (models) {
+    models.Food_users.belongsTo(models.Users, {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false,
       },
     });
-    models.Food_user.belongsTo(models.Foods, {
+    models.Food_users.belongsTo(models.Foods, {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false,
@@ -27,5 +27,5 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
-  return Food_user;
+  return Food_users;
 };
