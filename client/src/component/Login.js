@@ -1,21 +1,32 @@
 import React from "react";
+import {
+  Switch,
+  Route,
+  Router,
+  useHistory,
+  withRouter,
+} from "react-router-dom";
 import Modal from "react-modal";
+import axios from 'axios';
 import './loginModal.css'
 
 import "@rmwc/button/styles"
 import { Button } from '@rmwc/button'
+import Axios from "axios";
 
 const customStyles = {
   content: {
-    position: 'absolute',
-    top: '300px',
-    left: '300px',
-    right: '300px',
-    bottom: '300px',
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    width: '320px',
+    height: '350px',
+    transform: 'translate(-50%,-50%)',
     boxShadow: '0px 8px 36px #222',
     borderRadius: '6px'
   }
 };
+
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 
@@ -27,6 +38,8 @@ const validateForm = (errors) => {
   );
   return valid;
 }
+
+Modal.setAppElement('#root')
 
 const Login = (({ loginState, loginModalOpen, closeLoginModal }) => {
 
@@ -77,10 +90,19 @@ const Login = (({ loginState, loginModalOpen, closeLoginModal }) => {
     }
   }
 
+  const history = useHistory();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm(errors)) {
       console.info('Valid Form')
+      // axios('http://localgost:4000', errors, {withCredentials: true})
+      //   .then(response => {
+      //     if(response.status === 200){
+      //       loginState();
+      //       history.push('/');
+      //     }
+      //   })
     } else {
       console.error('Invalid Form')
     }
@@ -96,6 +118,7 @@ const Login = (({ loginState, loginModalOpen, closeLoginModal }) => {
       >
         <div className='wrapper'>
           <div className='form-wrapper'>
+
             <h2 className='title'>LOGIN</h2>
             <form onSubmit={handleSubmit} noValidate>
               <div className='email'>
@@ -110,7 +133,7 @@ const Login = (({ loginState, loginModalOpen, closeLoginModal }) => {
                 {errors.password.length > 0 &&
                   <span className='error'>{errors.password}</span>}
               </div>
-              <div>
+              <div className='button-div'>
                 <span className='submit'>
                   <Button raised >Create</Button>
                 </span>
@@ -118,7 +141,6 @@ const Login = (({ loginState, loginModalOpen, closeLoginModal }) => {
                   <Button raised>LOG IN</Button>
                 </span>
               </div>
-              <div className="provider">provide by Kim SoHyun, 자신있다면 연락해... 010-...</div>
             </form>
           </div>
         </div>
