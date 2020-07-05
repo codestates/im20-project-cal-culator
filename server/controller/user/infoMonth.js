@@ -11,6 +11,7 @@ module.exports = {
     const { date } = req.body;
     const year = date.slice(0, 4);
     const month = date.slice(5, 7);
+    console.log(year, month);
     const lastDay = getLastDayOfMonth(month, year);
     const startDay = `${year}-${month}-01` + "T00:00:00Z";
     const endDay = `${year}-${month}-${lastDay}` + "T23:59:59Z";
@@ -28,10 +29,19 @@ module.exports = {
         },
       ],
     }).then((result) => {
+      console.log("eeeee");
+      console.log(result);
       res.send(result);
     });
   },
 };
+
+/*
+{
+  권장량: 2500,
+  실제량: [3000, 2000, 2500 ...]
+}
+*/
 
 function getLastDayOfMonth(month, year) {
   if (+month === 2) {

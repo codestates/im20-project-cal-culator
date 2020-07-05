@@ -18,7 +18,7 @@ import { Button } from "@rmwc/button";
 import "@rmwc/button/styles";
 import { TextField } from "@rmwc/textfield";
 import "@rmwc/textfield/styles";
-
+import "./Calculator.css";
 
 const Cart = () => {
   const [checked, setChecked] = React.useState({});
@@ -29,16 +29,20 @@ const Cart = () => {
 
   return (
     <div>
-    <div>
-    <TextField selected={startDate} onChange={e => setStartDate(e.target.value)} label="date" type="date" />
-    </div>
+      <div>
+        <TextField
+          selected={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+          label="date"
+          type="date"
+        />
+      </div>
       <div>
         <DataTable>
           <DataTableContent>
             <DataTableHead>
               <DataTableRow>
-                <DataTableHeadCell hasFormControl>
-                </DataTableHeadCell>
+                <DataTableHeadCell hasFormControl></DataTableHeadCell>
                 <DataTableHeadCell>Food Name</DataTableHeadCell>
                 <DataTableHeadCell>Weight (g)</DataTableHeadCell>
                 <DataTableHeadCell>Calorie (kcal)</DataTableHeadCell>
@@ -68,7 +72,7 @@ const Cart = () => {
       <div className="total-calorie">
         <SimpleDataTable data={[["Total Calorie", "3000 kcal"]]} />
       </div>
-      <div className='cart-button'>
+      <div className="cart-button">
         <span>
           <SimpleDialog
             title="DELETE"

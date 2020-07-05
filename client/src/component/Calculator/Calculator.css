@@ -1,38 +1,45 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
 .search-input {
-    position: absolute;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .search-button {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .food {
-    width: 50%;
-    float: left;
-    margin-top: 100px;
+  width: 50%;
+  float: left;
+  margin-top: 100px;
 }
 
 .cart {
-    width: 50%;
-    float: right;
-    margin-top: 100px;
+  width: 50%;
+  float: right;
+  margin-top: 100px;
 }
 
 .total-calorie {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .addtocart-button {
-    margin-left: 220px;
-    margin-top: 20px;
+  margin-left: 220px;
+  margin-top: 20px;
 }
 
 .cart-button {
-    margin-top: 20px;
+  margin-top: 20px;
 }

@@ -15,6 +15,7 @@ import { Button } from "@rmwc/button";
 import "@rmwc/button/styles";
 import { TextField } from "@rmwc/textfield";
 import "@rmwc/textfield/styles";
+import "./Calculator.css";
 
 const FoodImage = () => {
   const [sortDir, setSortDir] = React.useState(null);
@@ -71,8 +72,13 @@ const FoodImage = () => {
         </DataTable>
       </div>
       <div>
-    <TextField selected={startDate} onChange={e => setStartDate(e.target.value)} label="date" type="date" />
-    </div>
+        <TextField
+          selected={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+          label="date"
+          type="date"
+        />
+      </div>
       <div className="addtocart-button">
         <SimpleDialog
           title="ADD TO CART"
